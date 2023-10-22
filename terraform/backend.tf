@@ -1,8 +1,8 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = ${{ secrets.RESOURCE_GROUP }}
-    storage_account_name = ${{ secrets.STORAGE_ACCOUNT }}
-    container_name       = ${{ secrets.CONTAINER }}
-    key                  = ${{ secrets.KEYNAME }}
+    resource_group_name  = var.rgname 
+    storage_account_name = var.storage_name
+    container_name       = var.container_name
+    key                  = var.key_name
   }
 }
