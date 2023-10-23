@@ -9,10 +9,10 @@ jobs:
   terraform:
     name: "Terraform"
     env:
-      # ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-      # ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-      # ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
-      # ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
+      ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
       TF_VAR_rg_name: ${{ secrets.RESOURCE_GROUP }}
       TF_VAR_storage_name: ${{ secrets.STORAGE_ACCOUNT }}
       TF_VAR_container_name: ${{ secrets.CONTAINER }}
@@ -29,10 +29,6 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v2
-      - name: Log in to Azure
-        uses: azure/login@v1
-        with:
-          creds: '{"clientId":"${{ secrets.CLIENT_ID }}","clientSecret":"${{ secrets.CLIENT_SECRET }}","subscriptionId":"${{ secrets.SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TENANT_ID }}"}'
 
       - name: setup terraform
         uses: hashicorp/setup-terraform@v2
