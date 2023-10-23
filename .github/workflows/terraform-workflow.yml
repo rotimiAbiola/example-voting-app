@@ -30,12 +30,6 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
 
-      - name: Log in to Azure
-        uses: azure/login@v1
-        with:
-          creds: '{"clientId":"${{ secrets.CLIENT_ID }}","clientSecret":"${{ secrets.CLIENT_SECRET }}","subscriptionId":"${{ secrets.SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TENANT_ID }}"}'
-      # app client Id must have contributor role
-
       - name: setup terraform
         uses: hashicorp/setup-terraform@v2
         with:
