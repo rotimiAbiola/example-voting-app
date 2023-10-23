@@ -43,7 +43,7 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
   linux_profile {
     admin_username = "ubuntu"
     ssh_key {
-      key_data = file(var.ssh_public_key)
+      key_data = var.ssh_public_key
     }
   }
 
@@ -51,6 +51,4 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
     network_plugin    = "azure"
     load_balancer_sku = "standard"
   }
-
-
 }
