@@ -9,10 +9,10 @@ jobs:
   terraform:
     name: "Terraform"
     env:
-      TF_VAR_ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-      TF_VAR_ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-      TF_VAR_ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
-      TF_VAR_ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
+      ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
       TF_VAR_rg_name: ${{ secrets.RESOURCE_GROUP }}
       TF_VAR_storage_name: ${{ secrets.STORAGE_ACCOUNT }}
       TF_VAR_container_name: ${{ secrets.CONTAINER }}
