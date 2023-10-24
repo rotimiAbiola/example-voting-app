@@ -62,6 +62,6 @@ jobs:
       # - name: Destroy Infra
       #   run: terraform destroy -auto-approve
   call-workflow2:
-    
+    needs: terraform
     uses: ./.github/workflows/k8s-workflow.yml
     secrets: inherit

@@ -31,7 +31,7 @@ module "ServicePrincipal" {
   service_principal_name = var.service_principal_name
 
   depends_on = [
-    azurerm_resource_group.altschRG
+    azurerm_resource_group.clusterRG
   ]
 }
 
