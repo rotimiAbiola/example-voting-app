@@ -20,6 +20,7 @@ jobs:
       TF_VAR_service_principal_name: ${{ secrets.SERVICE_PRINCIPAL }}
       TF_VAR_keyvault_name: ${{ secrets.KEYVAULT }}
       TF_VAR_ssh_public_key: ${{ secrets.PUBLIC_KEY }}
+      TF_VAR_subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
       tf_actions_working_dir: ./terraform
     runs-on: ubuntu-latest
 
