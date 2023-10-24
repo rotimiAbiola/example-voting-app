@@ -1,7 +1,10 @@
 name: "Terraform"
 
 on:
-  workflow_call:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    # only build when important files change
 
 jobs:
   terraform:
@@ -58,3 +61,7 @@ jobs:
 
       # - name: Destroy Infra
       #   run: terraform destroy -auto-approve
+  call-workflow2:
+    
+    uses: ./.github/workflows/k8s-workflow.yml
+    secrets: inherit
