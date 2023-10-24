@@ -1,0 +1,16 @@
+name: CI Workflow
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+  call-workflow1:
+    uses: ./github/workflows/terraform-workflow.yml
+  call-workflow2:
+    needs: call-workflow1
+    uses: ./github/workflows/k8s-workflow.yml

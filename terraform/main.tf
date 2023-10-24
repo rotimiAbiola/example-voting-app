@@ -21,7 +21,7 @@ provider "azurerm" {
   }
 }
 
-resource "azurerm_resource_group" "altschRG" {
+resource "azurerm_resource_group" "clusterRG" {
   name     = var.rgname
   location = var.location
 }
@@ -77,6 +77,8 @@ module "cluster" {
   client_secret          = module.ServicePrincipal.client_secret
   location               = var.location
   resource_group_name    = var.rgname
+  subscription_id  = var.subscription_id
+  ssh_public_key =  var.ssh_public_key
 
   depends_on = [
     module.ServicePrincipal
